@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@102,900&family=Hanken+Grotesk:wght@300..600&display=block" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=320e265f">
+<link rel="stylesheet" href="assets/site.css?v=6f5c20cb">
 <style>
 
 :root{
@@ -123,8 +123,8 @@ ul{list-style:none}
 .headline{font-weight:600;font-size:13px;line-height:18px;letter-spacing:8px;padding-left:8px;white-space:normal;text-align:center;text-shadow:0 1px 14px rgba(0,0,0,.65)}
 .hero-text{max-width:720px;margin:22px auto 0;font-size:13px;line-height:1.7;letter-spacing:.3px;text-align:center;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.65)}
 .doors{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:center;align-items:center;width:auto;margin-top:20px;color:#fff}
-.doors i{font-style:normal;font-size:11px;opacity:.8}
-.door{display:inline-block;flex:none;height:auto;padding:12px 0 6px;border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid rgba(255,255,255,.75);font-weight:500;font-size:11px;line-height:16px;letter-spacing:2.5px;color:#fff;transition:border-color .2s}
+.doors i{font-style:normal;font-size:12.5px;opacity:.8}
+.door{display:inline-block;flex:none;height:auto;padding:12px 0 6px;border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid rgba(255,255,255,.75);font-weight:500;font-size:12.5px;line-height:16px;letter-spacing:2.5px;color:#fff;transition:border-color .2s}
 .door:hover{border-bottom-color:#ff2a1f}
 .is-entering .hero-text{opacity:0}
 @media (max-width:560px){.headline{letter-spacing:5px;padding-left:5px}.hero-text{font-size:14px}}
@@ -236,7 +236,7 @@ ul{list-style:none}
 </section>
 
 <section class="n-feature fit" id="photos" aria-labelledby="photos-h">
-  <img src="assets/hero-photo.jpg" alt="A row of brick townhouses photographed from the street" width="2400" height="1600" loading="lazy">
+  <img src="assets/hero-photo.jpg" srcset="assets/hero-photo-1200.jpg 1200w, assets/hero-photo.jpg 2400w" sizes="100vw" alt="A row of brick townhouses photographed from the street" width="2400" height="1600" loading="lazy">
   <div class="n-cap reveal">
 
     <h2 id="photos-h">HDR listing photos</h2>
@@ -310,13 +310,14 @@ ul{list-style:none}
   <div class="n-row">
     <h2 class="n-title reveal" id="quote-h">Get a quote</h2>
     <p class="n-lede reveal">Tell us what you need. Send the address and what you are after, and we reply with a quote. Or email <a class="n-mail" href="mailto:Support@arcshottech.com">Support@arcshottech.com</a></p>
-    <form class="n-form reveal" id="quoteForm" action="#" novalidate>
-      <label class="nf"><span>Name</span><input name="name" type="text" autocomplete="name"></label>
-      <label class="nf"><span>Email</span><input name="email" type="email" autocomplete="email"></label>
+    <form class="n-form reveal" id="quoteForm" action="https://formsubmit.co/Support@arcshottech.com" method="POST" data-ajax="https://formsubmit.co/ajax/Support@arcshottech.com">
+      <input type="hidden" name="_subject" value="ArcShot website: quote request"><input type="hidden" name="_template" value="table"><input type="hidden" name="page" value="Home"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="nf"><span>Name</span><input name="name" type="text" autocomplete="name" required></label>
+      <label class="nf"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
       <label class="nf"><span>I need</span><select name="need"><option>As-built drawings</option><option>A 3D tour</option><option>Listing photos</option><option>Not sure yet</option></select></label>
       <label class="nf"><span>When you need it</span><input name="when" type="text" placeholder="A date, or roughly"></label>
       <label class="nf wide"><span>The building</span><textarea name="message" placeholder="Address, size, anything we should know"></textarea></label>
-      <div class="n-send"><button class="n-btn" type="submit">Send</button><p class="n-sent" id="sent" role="status">Thanks. We will reply with a quote.</p><p class="n-note">Demo. The form is not connected yet.</p></div>
+      <div class="n-send"><button class="n-btn" type="submit">Send</button><p class="n-sent" id="sent" role="status">Thanks. We will reply with a quote.</p><p class="n-need" id="need" role="alert">Please add your name and an email we can reply to.</p><p class="n-fail" id="fail" role="alert">That did not go through. Please email <a class="n-mail" href="mailto:Support@arcshottech.com">Support@arcshottech.com</a></p></div>
     </form>
   </div>
 </section>
@@ -325,9 +326,9 @@ ul{list-style:none}
   <div class="n-row">
     <p class="n-name">ArcShot Tech</p>
     <div class="n-cols">
-      <div><h4>Services</h4><ul><li><a href="as-built-surveys.html">As-built surveys</a></li><li><a href="3d-tours-and-photos.html">3D tours</a></li><li><a href="3d-tours-and-photos.html#photos">Listing photos</a></li></ul></div>
-      <div><h4>Studio</h4><ul><li><a href="#top">Home</a></li><li><a href="#what-we-do">What we do</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li>Toronto, ON</li><li><a href="mailto:Support@arcshottech.com">Support@arcshottech.com</a></li></ul></div>
+      <div><h2>Services</h2><ul><li><a href="as-built-surveys.html">As-built surveys</a></li><li><a href="3d-tours-and-photos.html">3D tours</a></li><li><a href="3d-tours-and-photos.html#photos">Listing photos</a></li></ul></div>
+      <div><h2>Studio</h2><ul><li><a href="#top">Home</a></li><li><a href="#what-we-do">What we do</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Contact</h2><ul><li>Toronto, ON</li><li><a href="mailto:Support@arcshottech.com">Support@arcshottech.com</a></li></ul></div>
     </div>
   </div>
   <p class="n-copy">© 2026 ArcShot Tech</p>
@@ -369,6 +370,6 @@ ul{list-style:none}
 })();
 </script>
 <script src="assets/vendor/lenis.min.js"></script>
-<script src="assets/site.js?v=0876cb7b"></script>
+<script src="assets/site.js?v=68bd7446"></script>
 </body>
 </html>
