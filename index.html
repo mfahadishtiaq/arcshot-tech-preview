@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<title>ArcShot Tech · As-built surveys, 3D tours and listing photos in Toronto</title>
+<meta name="description" content="As-built surveys, Matterport 3D tours and HDR listing photos in Toronto. Accurate drawings and 3D tours of any building.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArcShot Tech">
+<meta property="og:title" content="ArcShot Tech · As-built surveys, 3D tours and listing photos in Toronto">
+<meta property="og:description" content="As-built surveys, Matterport 3D tours and HDR listing photos in Toronto. Accurate drawings and 3D tours of any building.">
+<meta property="og:url" content="https://mfahadishtiaq.github.io/arcshot-tech-preview/">
+<meta property="og:image" content="https://mfahadishtiaq.github.io/arcshot-tech-preview/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<script>
+
+(function(d){d.classList.add('js');try{
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('reduce');return;}
+  if('animate' in Element.prototype){d.classList.add('is-entering');setTimeout(function(){if(!window.__arcEntrance)d.classList.remove('is-entering');},2600);}
+}catch(e){}})(document.documentElement);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@102,900&family=Hanken+Grotesk:wght@300..600&display=block" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=320e265f">
+<style>
+
+:root{
+
+  --u:min(calc(100vw / 1280),calc(100vh / 640));
+  --u:min(calc(100vw / 1280),calc(100svh / 640));
+  --frame-w:calc(1280 * var(--u));
+  --frame-x:calc(50% - 640 * var(--u));
+  --nu:var(--u);--cu:var(--u);--hb:var(--u);
+  --layout:desktop;
+  --strip-top:calc(120 * var(--u));
+  --strip-w:var(--frame-w);
+  --strip-bot:calc(10 * var(--u));
+  --red:#ad0a0a;
+  --paper:#f3f0e8;--ink:#141210;--nav:#ecebe8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{background:#000;scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}
+html.lenis.lenis-smooth{scroll-behavior:auto}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#fff;background:#000;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:geometricPrecision}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.hero-wrap{position:relative;height:100vh;height:100svh}
+.stage{position:relative;width:100%;height:100vh;height:100svh;overflow:hidden;background:#000;isolation:isolate}
+.photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:34% 42%;display:block;user-select:none;-webkit-user-drag:none;pointer-events:none}
+
+.lid,.lid-all{fill:#000;opacity:0;transform-box:fill-box;transform-origin:50% 0}
+.is-entering .lid-all{opacity:1}
+.lift{position:absolute;left:0;right:0;top:0;height:calc(var(--strip-top) + var(--strip-w) * 190 / 1280 + var(--strip-bot));z-index:1;pointer-events:none;background:rgba(150,128,120,.26);mix-blend-mode:screen}
+.shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.86) 0,rgba(0,0,0,.7) calc(100 * var(--u)),rgba(0,0,0,0) calc(260 * var(--u)))}
+
+.band{position:absolute;left:0;right:0;top:0;z-index:2;display:grid;
+  grid-template-columns:1fr var(--strip-w) 1fr;
+  grid-template-rows:var(--strip-top) calc(var(--strip-w) * 190 / 1280) var(--strip-bot)}
+.band>span{background:#000;margin:-.5px}
+.band .band-top,.band .band-bot{grid-column:1/-1}
+.band h1{grid-column:2;grid-row:2;position:relative;font-size:0;line-height:0}
+.band svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;display:block}
+.wm{font-family:"Archivo","Arial Black",sans-serif;font-weight:900;font-stretch:102%;font-variation-settings:"wdth" 102;font-size:221px}
+
+.copy{position:absolute;left:var(--frame-x);width:var(--frame-w);bottom:0;z-index:3;display:flex;flex-direction:column;align-items:center;gap:calc(16 * var(--hb));padding:0 calc(24 * var(--u)) calc(26 * var(--u))}
+.headline{font-weight:400;font-size:calc(28.571 * var(--hb));line-height:1.08;letter-spacing:-.005em;white-space:nowrap;text-transform:uppercase;text-shadow:0 1px 18px rgba(0,0,0,.55)}
+.doors{display:flex;gap:calc(10 * var(--hb));flex-wrap:wrap;justify-content:center}
+.door{display:inline-flex;align-items:center;gap:calc(9 * var(--cu));height:calc(36 * var(--cu));padding:0 calc(18 * var(--cu));border-radius:calc(2 * var(--cu));font-weight:500;font-size:calc(14.286 * var(--cu));letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;transition:filter .15s,background-color .15s}
+.door.a{background:var(--red);color:#fff}
+.door.b{background:rgba(10,10,10,.5);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.85);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.door.a:hover{filter:brightness(1.14)}
+.door.b:hover{background:rgba(10,10,10,.75)}
+
+.is-entering :is(.n-bar,.headline,.door){opacity:0}
+
+@media (max-width:1074.98px),(max-height:537.98px){
+  :root{
+    --layout:tablet;
+    --pad:clamp(20px,3.2vw,32px);
+    --nu:1px;--cu:1px;--hb:1px;
+    --head-h:72px;
+    --strip-top:var(--head-h);
+    --strip-w:min(100vw,calc((100svh - var(--head-h)) * .3 * 1280 / 190));
+    --strip-bot:calc(var(--strip-w) * 10 / 1280);
+  }
+  .copy{left:0;width:100%;gap:18px;padding:0 var(--pad) calc(26px + env(safe-area-inset-bottom))}
+  .headline{font-size:clamp(22px,3.4vw,28px)}
+  .door{height:46px}
+  .shade{background:linear-gradient(to top,rgba(0,0,0,.86) 0,rgba(0,0,0,.6) 22%,rgba(0,0,0,0) 48%)}
+}
+
+@media (max-width:559.98px){
+  :root{
+    --layout:mobile;
+    --pad:clamp(14px,4.2vw,22px);
+    --head-h:64px;
+    --tag-row:0px;
+    --strip-top:calc(var(--head-h) + var(--tag-row));
+    --strip-w:calc((100vw - 2 * var(--pad)) * 1280 / 1259);
+    --strip-bot:10px;
+  }
+  .copy{gap:16px;padding-bottom:calc(max(22px,env(safe-area-inset-bottom)) + 6px)}
+  .headline{white-space:normal;text-align:center;text-wrap:balance;max-width:330px;font-size:24px;line-height:1.1}
+  .doors{width:100%;gap:10px}
+  .door{flex:1 1 100%;justify-content:center;height:48px}
+  .shade{background:linear-gradient(to top,rgba(0,0,0,.9) 0,rgba(0,0,0,.66) 30%,rgba(0,0,0,0) 58%)}
+}
+
+.copy{gap:0;padding-bottom:max(6.5vh,34px)}
+.headline{font-weight:600;font-size:13px;line-height:18px;letter-spacing:8px;padding-left:8px;white-space:normal;text-align:center;text-shadow:0 1px 14px rgba(0,0,0,.65)}
+.hero-text{max-width:720px;margin:22px auto 0;font-size:13px;line-height:1.7;letter-spacing:.3px;text-align:center;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.65)}
+.doors{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:center;align-items:center;width:auto;margin-top:20px;color:#fff}
+.doors i{font-style:normal;font-size:11px;opacity:.8}
+.door{display:inline-block;flex:none;height:auto;padding:12px 0 6px;border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid rgba(255,255,255,.75);font-weight:500;font-size:11px;line-height:16px;letter-spacing:2.5px;color:#fff;transition:border-color .2s}
+.door:hover{border-bottom-color:#ff2a1f}
+.is-entering .hero-text{opacity:0}
+@media (max-width:560px){.headline{letter-spacing:5px;padding-left:5px}.hero-text{font-size:14px}}
+</style>
+</head>
+<body id="top">
+
+<header class="n-bar" id="bar">
+  <a class="n-brand" href="#top">ArcShot Tech</a>
+  <nav aria-label="Main">
+    <ul class="n-links" id="navLinks">
+      <li><a href="#top" aria-current="page">Home</a></li>
+      <li><a href="as-built-surveys.html">As-Built Surveys</a></li>
+      <li><a href="3d-tours-and-photos.html">3D Tours and Photos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="only-compact"><a href="#quote">Get a Quote</a></li>
+    </ul>
+  </nav>
+  <a class="n-quote" href="#quote">Get a Quote</a>
+  <button class="n-menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><i aria-hidden="true"></i><i aria-hidden="true"></i></button>
+</header>
+
+<div class="hero-wrap" id="wrap">
+<main class="stage" id="stage">
+
+  <img class="photo" id="photo" src="assets/hero-toronto.jpg" width="2400" height="1066" alt="The Toronto skyline at dusk with the CN Tower lit">
+  <div class="lift" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+
+  <header class="band" aria-label="ArcShot Tech">
+    <span class="band-top"></span>
+    <span></span>
+    <h1><span class="sr">ArcShot Tech</span>
+      <svg viewBox="0 0 1280 190" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <mask id="knockout" maskUnits="userSpaceOnUse" x="-4" y="-4" width="1288" height="198">
+            <rect x="-4" y="-4" width="1288" height="198" fill="#fff"/>
+            <text class="wm" x="640" y="171" text-anchor="middle" textLength="1258" lengthAdjust="spacing" fill="#000">ARCSHOT</text>
+          </mask>
+        </defs>
+        <rect x="-4" y="-4" width="1288" height="198" fill="#000" mask="url(#knockout)"/>
+        <text class="wm wm-measure" x="640" y="171" text-anchor="middle" textLength="1258" lengthAdjust="spacing" fill="none">ARCSHOT</text>
+        <g class="lids"><rect class="lid-all" x="-4" y="-4" width="1288" height="198"/></g>
+      </svg>
+    </h1>
+    <span></span>
+    <span class="band-bot"></span>
+  </header>
+
+  <section class="copy" aria-label="Introduction">
+    <p class="headline">Accurate drawings and 3D tours of any building</p>
+    <p class="hero-text">As-built surveys, Matterport 3D tours and HDR listing photos in Toronto.</p>
+    <p class="doors"><a class="door" href="as-built-surveys.html">I need drawings</a><i aria-hidden="true">|</i><a class="door" href="3d-tours-and-photos.html">I need a 3D tour</a></p>
+  </section>
+</main>
+</div>
+
+<section class="n-sec" id="what-we-do" aria-labelledby="wwd-h">
+  <div class="n-row">
+    <h2 class="n-title reveal" id="wwd-h">What we do</h2>
+    <p class="n-lede reveal">Two services, for two kinds of client. Drawings for the people who design and build. 3D tours and photos for the people who sell.</p>
+    <span class="side l" aria-hidden="true">Services</span><span class="side r" aria-hidden="true">Services</span>
+    <div class="n-grid">
+      <article class="tile wide reveal">
+        <a href="as-built-surveys.html">
+          <figure><img src="assets/svc-asbuilt.jpg" alt="A printed floor plan on a desk with a laser measure and a 360 camera" width="2000" height="1340" loading="lazy"></figure>
+          <h3>As-built surveys</h3>
+          <p>A building measured as it stands today and drawn to the level of detail you ask for. From a schematic floor plan to a detailed layout with sections and elevations. For architects, designers, contractors and property managers.</p>
+          <p class="meta">Floor plans <b>|</b> As-built layouts <b>|</b> Sections and elevations</p>
+        </a>
+      </article>
+      <article class="tile reveal">
+        <a href="3d-tours-and-photos.html">
+
+          <figure><img src="assets/svc-tour-split.jpg" alt="A living room shown half as a photograph and half as a 3D scan model" width="1200" height="1607" loading="lazy"></figure>
+          <h3>Matterport 3D tours</h3>
+          <p>A 3D tour buyers walk through at any hour, on a phone, a laptop or a VR headset. Every tour comes with a dollhouse view and a schematic floor plan. For real estate agents and property owners.</p>
+          <p class="meta">360° tour <b>|</b> Dollhouse view <b>|</b> Floor plan</p>
+        </a>
+      </article>
+      <article class="tile reveal">
+        <a href="3d-tours-and-photos.html#photos">
+          <figure><img src="assets/photo-2.jpg" alt="A kitchen with an island, photographed for a listing" width="1400" height="934" loading="lazy"></figure>
+          <h3>HDR listing photos</h3>
+          <p>Listing photos shot in HDR so the windows and the room both read, delivered the next day. Unlimited photos on every project. For real estate agents and property owners.</p>
+          <p class="meta">Unlimited photos <b>|</b> Next-day turnaround</p>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="n-feature pan" id="tour" aria-labelledby="tour-h">
+  <div class="n-pan" tabindex="0" role="group" aria-label="A 360 degree capture of a condo. Swipe sideways to look around."><img src="assets/pano.jpg" alt="A 360 degree capture of a condo living room and kitchen" width="2400" height="1104" loading="lazy"></div>
+  <div class="n-cap reveal">
+    <p class="n-pan-hint" aria-hidden="true">Drag to look around</p>
+    <h2 id="tour-h">A downtown condo, captured in 3D</h2>
+    <p>This is one scan position from a Matterport tour of a downtown condo. In the tour itself you stand in the room, look around and walk on to the next one.</p>
+  </div>
+</section>
+
+<section class="n-sec" id="tour-live" aria-labelledby="live-h">
+  <div class="n-row">
+    <h2 class="n-title reveal" id="live-h">Walk through a tour</h2>
+    <p class="n-lede reveal">Press play, click where you want to go and drag to look around. This is what a buyer gets from a 3D tour.</p>
+    <div class="n-tour reveal"><iframe src="https://my.matterport.com/show/?m=JGPnGQ6hosj&amp;play=0&amp;qs=1" title="Sample Matterport 3D tour of a house" loading="lazy" allow="fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div>
+    <p class="n-tour-cap">Sample tour <b>|</b> A house <b>|</b> Not an ArcShot project</p>
+  </div>
+</section>
+
+<section class="n-sec" id="work" aria-labelledby="work-h">
+  <div class="n-row">
+
+    <h2 class="n-title reveal" id="work-h">As-built surveys and floor plans</h2>
+    <p class="n-lede reveal">A different service from the 3D tours above. Measured drawings of an existing building, for architects, designers, contractors and property managers.</p>
+    <span class="side l" aria-hidden="true">Condo</span><span class="side r" aria-hidden="true">Condo</span>
+    <div class="n-grid">
+
+      <article class="tile wide reveal">
+        <a href="#quote">
+          <figure class="sheet"><img src="assets/work-asbuilt-schematic.png" alt="Schematic floor plan of a condo unit, rooms colour coded with square footage" width="1664" height="1193" loading="lazy"></figure>
+          <h3>Schematic floor plan</h3>
+          <p>Rooms named and measured, square footage for each. The plan a listing needs.</p>
+          <p class="meta">Drawings <b>|</b> Condo unit <b>|</b> Toronto</p>
+        </a>
+      </article>
+      <article class="tile wide reveal">
+        <a href="#quote">
+          <figure class="sheet"><img src="assets/work-asbuilt-layout.png" alt="As-built layout of the same unit with dimensions, heights and finishes" width="1654" height="1189" loading="lazy"></figure>
+          <h3>As-built layout</h3>
+          <p>Every wall, door and ceiling height, finishes noted. The drawing an architect works from, made from the same visit as the schematic plan.</p>
+          <p class="meta">Drawings <b>|</b> Condo unit <b>|</b> Toronto</p>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="n-feature fit" id="photos" aria-labelledby="photos-h">
+  <img src="assets/hero-photo.jpg" alt="A row of brick townhouses photographed from the street" width="2400" height="1600" loading="lazy">
+  <div class="n-cap reveal">
+
+    <h2 id="photos-h">HDR listing photos</h2>
+    <p>Photos of a property, inside and out, shot in HDR so the windows and the room both read. Delivered the next day.</p>
+  </div>
+</section>
+
+<section class="n-sec" aria-labelledby="rooms-h">
+  <div class="n-row">
+    <h2 class="n-title reveal" id="rooms-h">Room by room</h2>
+    <span class="side l" aria-hidden="true">Rooms</span><span class="side r" aria-hidden="true">Rooms</span>
+    <div class="n-grid c5">
+      <article class="tile reveal">
+        <figure><img src="assets/strip-02.jpg" alt="Living room and kitchen" width="960" height="640" loading="lazy"></figure>
+        <h3>Living room</h3>
+        <p class="meta">HDR photo <b>|</b> Interior</p>
+      </article>
+      <article class="tile reveal">
+        <figure><img src="assets/strip-03.jpg" alt="Kitchen with an island" width="960" height="640" loading="lazy"></figure>
+        <h3>Kitchen</h3>
+        <p class="meta">HDR photo <b>|</b> Interior</p>
+      </article>
+      <article class="tile reveal">
+        <figure><img src="assets/strip-05.jpg" alt="Dining area by a window" width="960" height="640" loading="lazy"></figure>
+        <h3>Dining</h3>
+        <p class="meta">HDR photo <b>|</b> Interior</p>
+      </article>
+      <article class="tile reveal">
+        <figure><img src="assets/strip-08.jpg" alt="Home office with two desks" width="960" height="640" loading="lazy"></figure>
+        <h3>Office</h3>
+        <p class="meta">HDR photo <b>|</b> Interior</p>
+      </article>
+      <article class="tile reveal">
+        <figure><img src="assets/strip-09.jpg" alt="Bathroom with a freestanding tub" width="960" height="640" loading="lazy"></figure>
+        <h3>Bathroom</h3>
+        <p class="meta">HDR photo <b>|</b> Interior</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="n-sec" id="quote" aria-labelledby="quote-h">
+  <div class="n-row">
+    <h2 class="n-title reveal" id="quote-h">Get a quote</h2>
+    <p class="n-lede reveal">Tell us what you need. Send the address and what you are after, and we reply with a quote. Or email <a class="n-mail" href="mailto:Support@arcshottech.com">Support@arcshottech.com</a></p>
+    <form class="n-form reveal" id="quoteForm" action="#" novalidate>
+      <label class="nf"><span>Name</span><input name="name" type="text" autocomplete="name"></label>
+      <label class="nf"><span>Email</span><input name="email" type="email" autocomplete="email"></label>
+      <label class="nf"><span>I need</span><select name="need"><option>As-built drawings</option><option>A 3D tour</option><option>Listing photos</option><option>Not sure yet</option></select></label>
+      <label class="nf"><span>When you need it</span><input name="when" type="text" placeholder="A date, or roughly"></label>
+      <label class="nf wide"><span>The building</span><textarea name="message" placeholder="Address, size, anything we should know"></textarea></label>
+      <div class="n-send"><button class="n-btn" type="submit">Send</button><p class="n-sent" id="sent" role="status">Thanks. We will reply with a quote.</p><p class="n-note">Demo. The form is not connected yet.</p></div>
+    </form>
+  </div>
+</section>
+
+<footer class="n-foot">
+  <div class="n-row">
+    <p class="n-name">ArcShot Tech</p>
+    <div class="n-cols">
+      <div><h4>Services</h4><ul><li><a href="as-built-surveys.html">As-built surveys</a></li><li><a href="3d-tours-and-photos.html">3D tours</a></li><li><a href="3d-tours-and-photos.html#photos">Listing photos</a></li></ul></div>
+      <div><h4>Studio</h4><ul><li><a href="#top">Home</a></li><li><a href="#what-we-do">What we do</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>Toronto, ON</li><li><a href="mailto:Support@arcshottech.com">Support@arcshottech.com</a></li></ul></div>
+    </div>
+  </div>
+  <p class="n-copy">© 2026 ArcShot Tech</p>
+</footer>
+
+<script>
+
+(function(){
+  var root=document.documentElement;
+  if(!root.classList.contains('is-entering'))return;
+  var EXPO='cubic-bezier(0.16,1,0.3,1)',QUART='cubic-bezier(0.76,0,0.24,1)',img=document.getElementById('photo');
+  var waits=[document.fonts?document.fonts.ready:null,img&&img.decode?img.decode().catch(function(){}):null].filter(Boolean);
+  Promise.race([Promise.all(waits),new Promise(function(r){setTimeout(r,700);})]).then(function(){
+    if(!root.classList.contains('is-entering'))return;
+    window.__arcEntrance=true;
+    var desk=(getComputedStyle(root).getPropertyValue('--layout').trim()||'desktop')==='desktop';
+    var lift=desk?6:4,anims=[];
+    function play(el,kf,t,d,e){if(el)anims.push(el.animate(kf,{delay:t*1000,duration:d*1000,easing:e||EXPO,fill:'both'}));}
+    function rise(px){return [{opacity:0,transform:'translateY('+px+'px)'},{opacity:1,transform:'none'}];}
+    var q=function(s){return document.querySelector(s);};
+
+    var svg=q('.band svg'),g=svg.querySelector('.lids'),meas=svg.querySelector('.wm-measure'),cuts=[-4],n=7;
+    try{n=meas.getNumberOfChars();for(var i=0;i<n-1;i++){var a=meas.getExtentOfChar(i),b=meas.getExtentOfChar(i+1);cuts.push((a.x+a.width+b.x)/2);}}
+    catch(e){cuts=[-4];for(var k=1;k<n;k++)cuts.push(-4+1288*k/n);}
+    cuts.push(1284);
+    for(var j=0;j<cuts.length-1;j++){
+      var r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      r.setAttribute('class','lid');r.setAttribute('x',cuts[j]);r.setAttribute('y',-4);r.setAttribute('width',cuts[j+1]-cuts[j]+0.6);r.setAttribute('height',198);
+      g.appendChild(r);
+      play(r,[{opacity:1,transform:'scaleY(1)'},{opacity:1,transform:'scaleY(0)'}],.06+j*.06,1.0,QUART);
+    }
+    play(q('.n-bar'),[{opacity:0},{opacity:1}],.50,.8);
+    play(q('.headline'),[{opacity:1,transform:'translateY(100%)',clipPath:'inset(-100% -8px 100% -8px)'},{opacity:1,transform:'none',clipPath:'inset(0 -8px 0 -8px)'}],.85,1.0);
+    play(q('.hero-text'),rise(lift),1.05,.7);
+    [].forEach.call(document.querySelectorAll('.door'),function(el,i){play(el,rise(lift+2),1.20+i*.08,.7);});
+    root.classList.remove('is-entering');
+    Promise.all(anims.map(function(x){return x.finished;})).then(function(){anims.forEach(function(x){x.cancel();});[].forEach.call(g.querySelectorAll('.lid'),function(l){l.remove();});},function(){});
+  });
+})();
+</script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/site.js?v=0876cb7b"></script>
+</body>
+</html>
