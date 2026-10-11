@@ -11,8 +11,9 @@
   var root=document.documentElement,items=[].slice.call(document.querySelectorAll('.reveal'));
   function all(){items.forEach(function(el){el.classList.add('on');});}
   if(root.classList.contains('reduce')||!('IntersectionObserver' in window)){all();return;}
-  var free=0;
+  var free=0,heard=false;
   var io=new IntersectionObserver(function(entries){
+    heard=true;
     entries.forEach(function(en){
       if(!en.isIntersecting)return;io.unobserve(en.target);
       var now=performance.now(),at=Math.max(now,free);free=at+140;
@@ -20,6 +21,9 @@
     });
   },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   items.forEach(function(el){io.observe(el);});
+
+  function guard(){if(document.visibilityState!=='visible'||heard)return;setTimeout(function(){if(!heard&&document.visibilityState==='visible'){io.disconnect();all();}},3000);}
+  guard();document.addEventListener('visibilitychange',guard);
 })();
 
 (function(){
